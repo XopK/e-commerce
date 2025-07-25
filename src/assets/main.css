@@ -1,2 +1,8 @@
+@import "./fonts.css";
 @import "tailwindcss";
-@import './base.css';
+@import "./base.css";
+
+@theme {
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-integral: "IntegralCF", sans-serif;
+}

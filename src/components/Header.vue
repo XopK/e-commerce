@@ -4,7 +4,7 @@
 <template>
 <header>
     <div class="logo">
-        SHOP.CO
+        
     </div>
 </header>
 </template>
