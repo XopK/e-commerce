@@ -1,3 +1,36 @@
 @theme {
   --text-3xl: 32px;
+  --text-6xl: 64px;
+}
+
+.btn {
+  padding: 15px 67px;
+  border: 1px solid currentColor;
+  border-radius: 54px;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #000;
+  border-color: #000;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:active {
+  background-color: #1a1a1a;
+  color: white;
 }
