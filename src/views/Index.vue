@@ -1,4 +1,43 @@
 <script setup>
+import ProductCard from '@/components/bases/ProductCard.vue';
+import frame32 from '@/assets/images/tests/Frame32.png'
+import frame33 from '@/assets/images/tests/Frame33.png'
+import frame34 from '@/assets/images/tests/Frame34.png'
+import frame38 from '@/assets/images/tests/Frame38.png'
+
+const products = [
+    {
+        id: 1,
+        image: frame32,
+        title: 'T-SHIRT WITH TAPE DETAILS',
+        rating: 4.5,
+        price: 120,
+    },
+    {
+        id: 2,
+        image: frame33,
+        title: 'SKINNY FIT JEANS',
+        rating: 3.5,
+        price: 240,
+        oldPrice: 260
+    },
+    {
+        id: 3,
+        image: frame34,
+        title: 'CHECKERED SHIRT',
+        rating: 4.5,
+        price: 180,
+    },
+    {
+        id: 4,
+        image: frame38,
+        title: 'SLEEVE STRIPED T-SHIRT',
+        rating: 4.5,
+        price: 130,
+        oldPrice: 100
+    },
+
+]
 </script>
 
 <template>
@@ -39,23 +78,30 @@
     </section>
     <section class="brand-tape w-full">
         <div class="flex items-center justify-center py-11  gap-26">
-            <img src="@/assets/images/Versace.png" alt="Verace">
-            <img src="@/assets/images/Zara.png" alt="Zara">
-            <img src="@/assets/images/Gucci.png" alt="Gucci">
-            <img src="@/assets/images/Prada.png" alt="Prada">
-            <img src="@/assets/images/Calvin.png" alt="Calvin Klein">
+            <img src="@/assets/images/brands/Versace.png" alt="Verace">
+            <img src="@/assets/images/brands/Zara.png" alt="Zara">
+            <img src="@/assets/images/brands/Gucci.png" alt="Gucci">
+            <img src="@/assets/images/brands/Prada.png" alt="Prada">
+            <img src="@/assets/images/brands/Calvin.png" alt="Calvin Klein">
         </div>
     </section>
-    <section class="new-arrivals w-full mt-18">
+    <section class="new-arrivals mt-18">
         <h3 class="font-integral text-center font-bold text-5xl">New arrivals</h3>
+
+        <div class="mt-14 grid grid-cols-4 gap-5 max-w-fit mx-auto">
+            <ProductCard v-for="product in products" :key="product.id" :image="product.image" :title="product.title"
+                :rating="product.rating" :price="product.price" :oldPrice="product.oldPrice" />
+        </div>
     </section>
+
 </template>
 
 <style scoped>
 .hero {
     background-color: #F2F0F1;
 }
-.brand-tape{
+
+.brand-tape {
     background-color: #000000;
 }
 </style>
