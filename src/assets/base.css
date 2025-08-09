@@ -3,8 +3,20 @@
   --text-6xl: 64px;
 }
 
+.btn-sm {
+  padding: 8px 24px;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+.btn-lg {
+  padding: 20px 80px;
+  font-size: 18px;
+  border-radius: 60px;
+}
+
 .btn {
-  padding: 15px 67px;
+  padding: 15px 67px; /* дефолтный размер */
   border: 1px solid currentColor;
   border-radius: 54px;
   background-color: transparent;
@@ -17,7 +29,8 @@
   color: white;
   background-color: #000;
   border-color: #000;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.2s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+    box-shadow 0.2s;
 }
 
 .btn-primary:hover {
@@ -31,6 +44,30 @@
 }
 
 .btn-primary:active {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s,
+    box-shadow 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: #000;
+  color: white;
+}
+
+.btn-outline:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn-outline:active {
   background-color: #1a1a1a;
   color: white;
 }

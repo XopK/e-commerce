@@ -5,7 +5,41 @@ import frame33 from '@/assets/images/tests/Frame33.png'
 import frame34 from '@/assets/images/tests/Frame34.png'
 import frame38 from '@/assets/images/tests/Frame38.png'
 
-const products = [
+const new_arrivals = [
+    {
+        id: 1,
+        image: frame32,
+        title: 'T-SHIRT WITH TAPE DETAILS',
+        rating: 2.5,
+        price: 120,
+    },
+    {
+        id: 2,
+        image: frame33,
+        title: 'SKINNY FIT JEANS',
+        rating: 3.5,
+        price: 240,
+        oldPrice: 260
+    },
+    {
+        id: 3,
+        image: frame34,
+        title: 'CHECKERED SHIRT',
+        rating: 4.5,
+        price: 180,
+    },
+    {
+        id: 4,
+        image: frame38,
+        title: 'SLEEVE STRIPED T-SHIRT',
+        rating: 4.5,
+        price: 130,
+        oldPrice: 100
+    },
+
+]
+
+const top_selling = [
     {
         id: 1,
         image: frame32,
@@ -36,11 +70,11 @@ const products = [
         price: 130,
         oldPrice: 100
     },
-
 ]
 </script>
 
 <template>
+
     <section class="hero w-full px-4 py-8 sm:px-8 sm:py-12 lg:px-25 lg:py-25">
         <div class="hero-text text-center w-full max-w-xs sm:max-w-lg lg:max-w-2xl mx-auto">
             <h2 class="uppercase font-integral font-bold text-2xl sm:text-4xl lg:text-6xl leading-tight">
@@ -76,6 +110,7 @@ const products = [
             </div>
         </div>
     </section>
+
     <section class="brand-tape w-full">
         <div class="flex items-center justify-center py-11  gap-26">
             <img src="@/assets/images/brands/Versace.png" alt="Verace">
@@ -85,12 +120,52 @@ const products = [
             <img src="@/assets/images/brands/Calvin.png" alt="Calvin Klein">
         </div>
     </section>
+
     <section class="new-arrivals mt-18">
         <h3 class="font-integral text-center font-bold text-5xl">New arrivals</h3>
 
         <div class="mt-14 grid grid-cols-4 gap-5 max-w-fit mx-auto">
-            <ProductCard v-for="product in products" :key="product.id" :image="product.image" :title="product.title"
+            <ProductCard v-for="product in new_arrivals" :key="product.id" :image="product.image" :title="product.title"
                 :rating="product.rating" :price="product.price" :oldPrice="product.oldPrice" />
+        </div>
+
+        <div class="flex justify-center mt-9">
+            <button class="btn btn-outline btn-sm font-satoshi font-medium text-base">View All</button>
+        </div>
+    </section>
+
+    <section class="top-selling mt-18">
+        <h3 class="font-integral text-center font-bold text-5xl">Top selling</h3>
+
+        <div class="mt-14 grid grid-cols-4 gap-5 max-w-fit mx-auto">
+            <ProductCard v-for="product in top_selling" :key="product.id" :image="product.image" :title="product.title"
+                :rating="product.rating" :price="product.price" :oldPrice="product.oldPrice" />
+        </div>
+
+        <div class="flex justify-center mt-9">
+            <button class="btn btn-outline btn-sm font-satoshi font-medium text-base">View All</button>
+        </div>
+    </section>
+
+    <section class="dress-style mt-20 max-w-fit mx-auto px-16 py-19 rounded-4xl">
+        <h3 class="font-integral text-center font-bold text-5xl px-69">Browse by dress style</h3>
+
+        <div class="grid grid-cols-3 gap-5 mt-16">
+            <div class="casual relative overflow-hidden rounded-3xl p-8">
+                <h4 class="font-satoshi font-bold text-4xl z-10">Casual</h4>
+            </div>
+
+            <div class="formal relative overflow-hidden rounded-3xl p-8 col-span-2">
+                <h4 class="font-satoshi font-bold text-4xl z-10">Formal</h4>
+            </div>
+
+            <div class="party relative overflow-hidden rounded-3xl p-8 col-span-2">
+                <h4 class="font-satoshi font-bold text-4xl z-10">Party</h4>
+            </div>
+
+            <div class="gym relative overflow-hidden rounded-3xl p-8">
+                <h4 class="font-satoshi font-bold text-4xl z-10">Gym</h4>
+            </div>
         </div>
     </section>
 
@@ -103,5 +178,61 @@ const products = [
 
 .brand-tape {
     background-color: #000000;
+}
+
+.dress-style {
+    background-color: #F0F0F0;
+}
+
+.casual {
+    background: url('@/assets/images/dress/Casual.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 289px;
+    transition: transform 0.3s ease;
+}
+
+.casual:hover {
+    transform: translateY(-4px);
+}
+
+.formal {
+    background: url('@/assets/images/dress/Formal.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 289px;
+    transition: transform 0.3s ease;
+}
+
+.formal:hover {
+    transform: translateY(-4px);
+}
+
+.party {
+    background: url('@/assets/images/dress/Party.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 289px;
+    transition: transform 0.3s ease;
+}
+
+.party:hover {
+    transform: translateY(-4px);
+}
+
+.gym {
+    background: url('@/assets/images/dress/Gym.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 289px;
+    transition: transform 0.3s ease;
+}
+
+.gym:hover {
+    transform: translateY(-4px);
 }
 </style>
